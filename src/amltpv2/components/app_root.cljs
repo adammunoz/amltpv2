@@ -4,7 +4,5 @@
 (def style {:height "100%"})
 
 (defn app-root []
-  [:div {:class "mui-container-fluid" 
-         :style style} 
-        "test"]) 
+  [:div {:style style} [header/header]]) 
 
