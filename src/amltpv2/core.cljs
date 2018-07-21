@@ -1,15 +1,12 @@
 (ns amltpv2.core
   (:require [goog.dom :as dom]
             [reagent.core :as r]
+            [amltpv2.domain.store.core :as store]
             [amltpv2.components.app-root :as app-root])) 
 
 (enable-console-print!)
 
-;; define your app data so that it doesn't get over-written on reload
-
-(defonce app-state (atom {:text "Hello world!"}))
-
-(r/render [app-root/app-root]
+(r/render [app-root/app-root @store/app-state]
   (dom/getElement "app"))
 
 (defn on-js-reload [])
